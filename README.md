@@ -1,17 +1,17 @@
-# 📚 Research Paper Assistant (RAG)
+#  Research Paper Assistant (RAG)
 
 A powerful RAG (Retrieval-Augmented Generation) application designed to help researchers interact with and extract insights from PDF research papers. Built with **Streamlit**, **LangChain**, and **Groq (Llama 3.1)** for blazing fast and accurate responses.
 
-## 🚀 Key Features
+##  Key Features
 
-*   **⚡ Blazing Fast Inference**: Uses **Groq API** with Llama 3.1-8b-instant for near-instant answers.
-*   **📄 PDF Ingestion**: Upload multiple research papers (PDFs) to build your knowledge base.
-*   **🔍 Smart Retrieval**: Uses semantic search (ChromaDB + SentenceTransformers) to find relevant context.
-*   **🎯 Session-Based Querying**: Upload a file and query *only* that file instantly, without distraction from the rest of the database.
-*   **🧹 Auto-Deduplication**: Automatically cleans up old versions of a file when you re-upload it, keeping your database clean.
-*   **🗑️ Easy Management**: View and delete documents from your knowledge base via the UI.
+*   **Blazing Fast Inference**: Uses **Groq API** with Llama 3.1-8b-instant for near-instant answers.
+*   **PDF Ingestion**: Upload multiple research papers (PDFs) to build your knowledge base.
+*   **Smart Retrieval**: Uses semantic search (ChromaDB + SentenceTransformers) to find relevant context.
+*   **Session-Based Querying**: Upload a file and query *only* that file instantly, without distraction from the rest of the database.
+*   **Auto-Deduplication**: Automatically cleans up old versions of a file when you re-upload it, keeping your database clean.
+*   **Easy Management**: View and delete documents from your knowledge base via the UI.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 *   **Frontend**: Streamlit
 *   **LLM Engine**: Groq API (Llama 3.1-8b-instant)
@@ -19,7 +19,7 @@ A powerful RAG (Retrieval-Augmented Generation) application designed to help res
 *   **Embeddings**: SentenceTransformers (`all-MiniLM-L6-v2`)
 *   **Orchestration**: LangChain (Text Splitting & Vector Store Management)
 
-## 📦 Installation
+## Installation
 
 1.  **Clone the repository**:
     ```bash
@@ -59,7 +59,7 @@ A powerful RAG (Retrieval-Augmented Generation) application designed to help res
         *   *"Compare the methodology of the two uploaded papers"*
     *   **Session Filter**: If you just uploaded files, the chat will focus on *those specific files*. Click "Clear filter" to search the entire database.
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 .
@@ -77,12 +77,9 @@ A powerful RAG (Retrieval-Augmented Generation) application designed to help res
 └── .env                   # API keys (not committed)
 ```
 
-## ⚠️ Troubleshooting
+##  Troubleshooting
 
 *   **"Model not found"**: We switched to Groq, so local model files are no longer needed. Ensure your `GROQ_API_KEY` is set.
 *   **"I cannot answer this..."**: The model is strict about using only provided context. If the answer isn't in the retrieved chunks, it will say so. Try increasing the number of retrieved chunks or rephrasing.
 *   **Slow Uploads**: Large PDFs take time to embed (CPU-bound). Please be patient.
 
-## 📜 License
-
-MIT License
