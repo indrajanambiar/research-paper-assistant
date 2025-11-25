@@ -1,0 +1,19 @@
+graph TD
+    UI[User Interface Streamlit] --> Actions[User Actions]
+    Actions -->|1. Ask Question| QueryMode[Query Mode]
+    Actions -->|2. Upload New PDF| UploadMode[Upload Mode]
+    
+    subgraph "Query Flow"
+        QueryMode --> QueryEmbed[Convert query to embedding]
+        QueryEmbed --> SearchDB[Search ChromaDB for relevant chunks]
+        SearchDB --> Retrieved[Retrieved chunks]
+        Retrieved --> LLMInput[Pass chunks + query to free LLM]
+        LLMInput --> LLMAns[LLM generates answer]
+    end
+    
+    subgraph "Upload Flow"
+        UploadMode --> Extract[Extract text from PDF/Image]
+        Extract --> Chunk[Chunk text]
+        Chunk --> EmbedChunk[Generate embeddings for each chunk]
+        EmbedChunk --> StoreDB[Store in ChromaDB]
+    end
